@@ -303,6 +303,13 @@ public class AddComputerManually extends Activity {
             }
         });
 
+        findViewById(R.id.cancelPcButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         // Bind to the ComputerManager service
         bindService(new Intent(AddComputerManually.this,
                     ComputerManagerService.class), serviceConnection, Service.BIND_AUTO_CREATE);

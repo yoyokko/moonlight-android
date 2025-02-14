@@ -26,6 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
+import android.widget.Button;
 
 import com.limelight.LimeLog;
 import com.limelight.PcView;
@@ -63,6 +64,14 @@ public class StreamSettings extends Activity {
         UiHelper.setLocale(this);
 
         setContentView(R.layout.activity_stream_settings);
+
+        Button closeBtn = findViewById(R.id.close);
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         UiHelper.notifyNewRootView(this);
     }

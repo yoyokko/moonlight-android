@@ -45,8 +45,8 @@
 
     <ImageButton
         android:id="@+id/settingsButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:cropToPadding="false"
         android:scaleType="fitXY"
         android:nextFocusForward="@id/helpButton"
@@ -57,27 +57,14 @@
         style="?android:attr/borderlessButtonStyle"/>
 
     <ImageButton
-        android:id="@+id/helpButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
+        android:id="@+id/manuallyAddPc"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:cropToPadding="false"
         android:scaleType="fitXY"
-        android:nextFocusForward="@id/manuallyAddPc"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/settingsButton"
-        android:src="@drawable/ic_help"
-        style="?android:attr/borderlessButtonStyle"/>
-
-    <ImageButton
-        android:id="@+id/manuallyAddPc"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:cropToPadding="false"
-        android:scaleType="fitXY"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/helpButton"
         android:src="@drawable/ic_add"
         style="?android:attr/borderlessButtonStyle"/>
 

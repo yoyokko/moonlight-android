@@ -14,7 +14,10 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/appListText"/>
+        android:layout_below="@+id/appListText">
+
+
+    </FrameLayout>
     
     <TextView
         android:id="@+id/appListText"
@@ -28,4 +31,9 @@
         android:preferKeepClear="true"
         android:textSize="28sp"/>
 
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Close" />
 </RelativeLayout>

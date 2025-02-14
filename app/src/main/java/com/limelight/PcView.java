@@ -3,6 +3,7 @@ package com.limelight;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Locale;
 
 import com.limelight.binding.PlatformBinding;
 import com.limelight.binding.crypto.AndroidCryptoProvider;
@@ -35,6 +36,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -139,7 +141,6 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
         // Setup the list view
         ImageButton settingsButton = findViewById(R.id.settingsButton);
         ImageButton addComputerButton = findViewById(R.id.manuallyAddPc);
-        ImageButton helpButton = findViewById(R.id.helpButton);
 
         settingsButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -154,19 +155,6 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
                 startActivity(i);
             }
         });
-        helpButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HelpLauncher.launchSetupGuide(PcView.this);
-            }
-        });
-
-        // Amazon review didn't like the help button because the wiki was not entirely
-        // navigable via the Fire TV remote (though the relevant parts were). Let's hide
-        // it on Fire TV.
-        if (getPackageManager().hasSystemFeature("amazon.hardware.fire_tv")) {
-            helpButton.setVisibility(View.GONE);
-        }
 
         getFragmentManager().beginTransaction()
             .replace(R.id.pcFragmentContainer, new AdapterFragment())
@@ -739,6 +727,16 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
 
         // Notify the view that the data has changed
         pcGridAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public Resources getResources() {
+        Resources res = super.getResources();
+        Configuration config = res.getConfiguration();
+        config.fontScale = 2.0f; // 设置正常字体大小的倍数
+        res.updateConfiguration(config, res.getDisplayMetrics());
+
+        return res;
     }
 
     @Override

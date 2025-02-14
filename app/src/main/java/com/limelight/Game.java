@@ -289,6 +289,13 @@ public class Game extends Activity implements SurfaceHolder.Callback,
             displayTransientMessage(getResources().getString(R.string.conn_metered));
         }
 
+        findViewById(R.id.closeBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         // Make sure Wi-Fi is fully powered up
         WifiManager wifiMgr = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         try {

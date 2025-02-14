@@ -314,6 +314,13 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
         setTitle(computerName);
         label.setText(computerName);
 
+        findViewById(R.id.closeBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         // Bind to the computer manager service
         bindService(new Intent(this, ComputerManagerService.class), serviceConnection,
                 Service.BIND_AUTO_CREATE);
@@ -619,8 +626,7 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
 
     @Override
     public int getAdapterFragmentLayoutId() {
-        return PreferenceConfiguration.readPreferences(AppView.this).smallIconMode ?
-                    R.layout.app_grid_view_small : R.layout.app_grid_view;
+        return R.layout.app_grid_view;
     }
 
     @Override

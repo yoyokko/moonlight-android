@@ -74,12 +74,7 @@ public class AppGridAdapter extends GenericGridAdapter<AppView.AppObject> {
     }
 
     private static int getLayoutIdForPreferences(PreferenceConfiguration prefs) {
-        if (prefs.smallIconMode) {
-            return R.layout.app_grid_item_small;
-        }
-        else {
-            return R.layout.app_grid_item;
-        }
+        return R.layout.app_grid_item;
     }
 
     public void updateLayoutWithPreferences(Context context, PreferenceConfiguration prefs) {

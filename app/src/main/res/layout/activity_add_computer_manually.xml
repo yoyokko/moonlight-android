@@ -20,14 +20,11 @@
 
     <EditText
         android:id="@+id/hostTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/manuallyAddPcText"
-        android:layout_toLeftOf="@+id/addPcButton"
-        android:layout_toStartOf="@+id/addPcButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:ems="10"
         android:singleLine="true"
         android:preferKeepClear="true"
@@ -39,13 +36,19 @@
 
     <Button
         android:id="@+id/addPcButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:layout_marginTop="25dp"
         android:layout_below="@+id/manuallyAddPcText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:preferKeepClear="true"
         android:text="@android:string/ok"/>
+    <Button
+        android:id="@+id/cancelPcButton"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:preferKeepClear="true"
+        android:text="@android:string/cancel"/>
 	
 </RelativeLayout>
